@@ -11,9 +11,9 @@ void setup() {
 
 void draw() {
   circleSize = random(10, 40);
-  r = random(colorRangeR);
-  g = random(colorRangeG);
-  b = random(colorRangeB);
+  r = random(50, colorRangeR);
+  g = random(5, colorRangeG);
+  b = random(50, colorRangeB);
   alphaR = random(100, 255);
 
   noStroke();
