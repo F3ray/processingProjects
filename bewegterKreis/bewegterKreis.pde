@@ -1,20 +1,29 @@
+// Make random drawing program: circle size and color ever changing, color range is randomized with mousePressed
+float circleSize;
+float colorRangeR, colorRangeG, colorRangeB;
+float r, g, b;
+float alphaR;
+
 void setup() {
   size(640, 360);
   background(0);
 }
 
 void draw() {
-  background (0);
-  stroke(150, 0, 255);
-  strokeWeight(5);
-  fill(200, 150, 255, 25);
+  circleSize = random(10, 40);
+  r = random(colorRangeR);
+  g = random(colorRangeG);
+  b = random(colorRangeB);
+  alphaR = random(100, 255);
+
+  noStroke();
+  fill(r, g, b, alphaR);
   // Draw the circle where the mouse is
-  circle(mouseX - 40, mouseY, 30);
-  circle(mouseX + 40, mouseY, 30);
-  circle(mouseX, mouseY - 40, 30);
-  circle(mouseX, mouseY + 40, 30);
+  circle(mouseX - 40, mouseY, circleSize);
 }
 
 void mousePressed() {
-  background (0);
+  colorRangeR = random(30, 255);
+  colorRangeG = random(30, 255);
+  colorRangeB = random(30, 255);
 }
