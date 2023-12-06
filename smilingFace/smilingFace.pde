@@ -19,7 +19,7 @@ void draw() {
     triangle(420, 20, 540, 60, 420, 40);
   } else if (mouseY < 160) {
     stroke(0, 150, 255);
-    fill(0, 255, 255);
+    fill(0, 230, 230);
     square(160, 120, 50);
     square(480, 120, 50);
     
