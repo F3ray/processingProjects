@@ -1,6 +1,7 @@
 float y = 100;
 float speed = 1;
 float gravity = 1;
+boolean isUp = false;
 
 void setup() {
   size(640, 380);
@@ -11,18 +12,23 @@ void draw() {
 
   noStroke();
   fill(255);
-  circle(320, y, 40);
-
-  y = y + speed;
+ 
+if (y >= height) {
+  isUp = true;
+}
+if (isUp == true) {
+  speed = speed - gravity;
+} else {
   speed = speed + gravity;
-
+}
+if (speed <= 0) {
+  isUp = false;
+}
+if (isUp == false) {  
+  y = y + speed;
+} else {
+  y = y - speed;
+}
   println(y);
-
-  if (y >= height) {
-    gravity = gravity * -1;
-  }
-
-  if (speed <= 1) {
-    gravity = gravity * -1;
-  }
+  circle(320, y, 40);
 }
